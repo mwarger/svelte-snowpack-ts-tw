@@ -1,12 +1,20 @@
 <script>
   function toggleDarkMode() {
-    window.document.querySelector("html")?.classList.toggle("dark")
+    const currentlyDark =
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    if (currentlyDark) {
+      document.querySelector("html")?.classList.remove("dark")
+      localStorage.theme = "light"
+    } else {
+      document.querySelector("html")?.classList.add("dark")
+      localStorage.theme = "dark"
+    }
   }
 </script>
 
-<style>
-  /* your styles go here */
-</style>
-
 <!-- markup (zero or more items) goes here -->
-<button type="button" on:click={toggleDarkMode}>toggle dark mode</button>
+<button
+  class="p-2 text-white bg-gray-700 rounded-md dark:text-black dark:bg-gray-50"
+  on:click={toggleDarkMode}>toggle dark mode</button>

@@ -4,8 +4,22 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Web site created using create-snowpack-app" />
+    <meta
+      name="description"
+      content="Web site created using create-snowpack-app"
+    />
     <title>Snowpack App</title>
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.querySelector("html").classList.add("dark")
+      } else {
+        document.querySelector("html").classList.remove("dark")
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

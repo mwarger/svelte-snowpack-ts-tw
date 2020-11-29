@@ -18,18 +18,9 @@
   .App {
     text-align: center;
   }
-  .App code {
-    background: #0002;
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
-  .App p {
-    margin: 0.4rem;
-  }
 
   .App-header {
     background-color: #f9f6f6;
-    color: #333;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -56,13 +47,16 @@
   }
 </style>
 
-<div class="bg-white dark:bg-black">
+<div
+  class="flex flex-col items-center justify-center flex-grow w-screen h-screen p-5 bg-white dark:bg-black">
   <a
-    class="bg-green-600 App-link"
+    class="text-blue-800 dark:text-blue-300"
     href="https://svelte.dev"
     target="_blank"
     rel="noopener noreferrer">
-    Learn wer
+    Svelte + TS + Snowpack + TW + Dark Mode Woo
   </a>
-  <DarkModeButton />
+  <div class="p-2">
+    <DarkModeButton />
+  </div>
 </div>
