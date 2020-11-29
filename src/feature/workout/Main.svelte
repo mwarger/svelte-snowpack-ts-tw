@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte"
+  import DarkModeButton from "./DarkModeButton.svelte"
   let count: number = 0
   onMount(() => {
     const interval = setInterval(() => count++, 1000)
@@ -55,19 +56,13 @@
   }
 </style>
 
-<div class="App">
-  <header class="App-header">
-    <img src="/logo.svg" class="App-logo" alt="logo" />
-    <p>Edit <code>src/App.svelte</code> and save to reload.</p>
-    <p>Page has been open for <code>{count}</code> seconds.</p>
-    <p>
-      <a
-        class="bg-green-600 App-link"
-        href="https://svelte.dev"
-        target="_blank"
-        rel="noopener noreferrer">
-        Learn wer
-      </a>
-    </p>
-  </header>
+<div class="bg-white dark:bg-black">
+  <a
+    class="bg-green-600 App-link"
+    href="https://svelte.dev"
+    target="_blank"
+    rel="noopener noreferrer">
+    Learn wer
+  </a>
+  <DarkModeButton />
 </div>
